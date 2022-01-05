@@ -1,0 +1,9 @@
+title: attribute
+type: object
+properties:
+  type:
+    type: string
+    example: User
+  url:
+    type: string
+    example: /services/data/v48.0/sobjects/User/0050E000000RlEQQA0

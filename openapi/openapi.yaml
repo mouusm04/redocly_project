@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: User Management
+  description: 
+    $ref: file.md
+  version: 1.0.0
+servers:
+  - url: https://bp-idp-pp.bpglobal.com
+    description: Dev server
+paths:
+  /services/data/{version}/subjects/user/{id}:
+    $ref: paths\services@data@{version}@subjects@user@{id}.yaml
+components:
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header

@@ -1,0 +1,90 @@
+get:
+  tags:
+    - User Management
+  summary: View User Preferences
+  description: >-
+    Specify the fields you want to retrieve in the fields parameter and use the
+    GET method of the resource. Refer Refer  <a
+    href="https://bp365.sharepoint.com/sites/IdentityAccessManagementIAMHub/SitePages/End-Points.aspx">here</a>
+    for latest version number of these API's
+  parameters:
+    - name: version
+      in: path
+      description: Version Number
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
+    - name: id
+      in: path
+      description: >-
+        18 Digit Alphanumeric Unique Identifier of the User to limit references
+        in the backend.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+    - name: fields
+      in: query
+      description: Different fields names
+      required: false
+      style: form
+      explode: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: ..\components\schemas\View.yaml
+        application/xml:
+          schema:
+            $ref: ..\components\schemas\View.yaml
+  security:
+    - Bearer: []
+patch:
+  tags:
+    - User Management
+  summary: Update User Preferences
+  description: >-
+    Specify the fields you want to update within the body of the request and use
+    the PATCH method of the resource. Refer  <a
+    href="https://bp365.sharepoint.com/sites/IdentityAccessManagementIAMHub/SitePages/Consumer_Idp_Service.aspx#service-end-points">Customer
+    & Consumer Identity</a> for latest version number of these API's
+  parameters:
+    - name: version
+      in: path
+      description: Version Number
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: integer
+    - name: id
+      in: path
+      description: >-
+        18 Digit Alphanumeric Unique Identifier of the User to limit references
+        in the backend.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ..\components\schemas\UpdateUserPreferences.yaml
+      application/xml:
+        schema:
+          $ref: ..\components\schemas\UpdateUserPreferences.yaml
+  responses:
+    '200':
+      description: Successful response
+      content: {}
+  security:
+    - Bearer: []

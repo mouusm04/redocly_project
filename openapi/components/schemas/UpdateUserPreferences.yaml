@@ -1,0 +1,6 @@
+title: Update User Preferences
+type: object
+properties:
+  Phone:
+    type: integer
+    example: 15417543010

@@ -1,0 +1,16 @@
+title: View User Consent
+type: object
+properties:
+  attributes:
+    type: array
+    items:
+      $ref: .\attributes.yaml
+  FirstName:
+    type: string
+    example: John
+  Email:
+    type: string
+    example: john.smith@example.com
+  Phone:
+    type: integer
+    example: 15417543010
